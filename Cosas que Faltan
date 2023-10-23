@@ -1,0 +1,16 @@
+~Algoritmos:
+    Ambos: Paciente repetido no volver a insertar en la fila
+           Cantidad de enfermeros
+           tiempo de atencion por Paciente
+    DC: Amarillos y verdes
+    
+~Main:
+    Archivo con datos para simulacion
+
+~Excepciones:
+    Punteros
+    Datos Nulos
+    etc
+
+~Interfaz
+    Todo
