@@ -60,7 +60,7 @@ class Enfermero:
         aux:int = 0  
     
         if(Pac.Color == "Azul"):
-            aux=len(NoAtendidos)
+            aux=len(NoAtendidos) #si es azul va al final de la lista
         else:
             while(i< len(NoAtendidos)): #si el paciente que quiero insertar no es azul recorro la lista
                 if(Pac.Color == NoAtendidos[i].Color): #si el que quiero insertar es del mismo color que el de la lista
@@ -69,4 +69,4 @@ class Enfermero:
         NoAtendidos.insert(aux+1,Pac)   
  
  #No chequea ningun otro color que no sea el mismo del paciente por que es voraz y no le importa
- #No respeta prioridad. Si por ej, no hay ningun naranja ya en la fila, pero si rojos, el naranja se inserta antes que los rojos (pasa con todos los colores)
+ #No respeta prioridad. Si por ej, no hay ningun naranja ya en la fila se inserta en la posicion [i]
