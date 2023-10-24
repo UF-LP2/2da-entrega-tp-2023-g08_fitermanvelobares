@@ -1,0 +1,3 @@
+
+class PacRepetidoException (Exception):
+    pass
