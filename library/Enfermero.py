@@ -12,20 +12,20 @@ class Enfermero:
     def Asignar_Color_Paciente(self, Pac: Paciente) -> None:
             for sintoma in Pac.Sintomas:
                 if sintoma in ["No Respira", "Politraumatismo Grave"]:
-                    Pac.Color = "Rojo"
+                    Pac.ColorP = Colores("Rojo")  
                     Pac.HorarioAtendido = datetime.now()
                     break
                 elif sintoma in ["Coma", "Convulsiones", "Hemorragia Digestiva", "Isquemia"]:
-                    Pac.Color = "Naranja"
+                    Pac.ColorP = Colores("Naranja")  
                     Pac.HorarioAtendido = datetime.now()
                     break
                 elif sintoma in ["Cefalea Brusca", "Paresia", "Hipertension Arterial", "Vertigo Con Afectacion Vegetativa", "Sincope", "Urgencias Psiquiatricas"]:
-                    Pac.Color = "Amarillo"
+                    Pac.ColorP = Colores("Amarillo")  
                 elif sintoma in ["Otalgias", "Odontalgias", "Dolores Inespecíficos Leves", "Traumatismos", "Esguinces"]:
-                    Pac.Color = "Verde"
+                    Pac.ColorP = Colores("Verde")  
                     Pac.HorarioAtendido = datetime.now()
-                elif (Pac.Color == "Blanco"):
-                    Pac.Color = "Azul"
+                elif (Pac.ColorP.Color == "Blanco"):
+                    Pac.ColorP = Colores("Azul") 
                     Pac.HorarioAtendido = datetime.now()
             
     # break en rojo y naranja pq ya con un sintoma de ese color me basta para clasificarlos

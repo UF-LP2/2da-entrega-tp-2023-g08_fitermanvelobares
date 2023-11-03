@@ -1,6 +1,6 @@
 from library.Paciente import Paciente
 from library.Enfermero import Enfermero
-from src.Colores import Colores
+from library.Colores import Colores
 import pytest
 
 def test_PacienteRojo():
@@ -10,8 +10,8 @@ def test_PacienteRojo():
     Enfermero1 = Enfermero("57531189", "Silvio", "Mendex")
     #creo pacientes y enfermero
     
-    Enfermero1. Asignar_Color_Paciente(Raul)
-    Enfermero1. Asignar_Color_Paciente(Jose)
+    Enfermero1.Asignar_Color_Paciente(Raul)
+    Enfermero1.Asignar_Color_Paciente(Jose)
     #enfermero asigna colores a los pacientes
     
     assert Raul.ColorP.Color == "Rojo"

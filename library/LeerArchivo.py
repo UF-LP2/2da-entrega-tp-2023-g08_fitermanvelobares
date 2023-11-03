@@ -15,3 +15,6 @@ def LecturaArchivoSimulacion(ListasinAtender: List[Paciente]):
             ListasinAtender.append(paciente)
     
     return
+
+
+
