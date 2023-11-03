@@ -2,18 +2,20 @@
     Ambos: Paciente repetido no volver a insertar en la fila
            Cantidad de enfermeros
            tiempo de atencion por Paciente
+           TIEMPOS MAXIMOS DE ESPERA POR COLOR!!! donde lo metemos, en un enum?
     DC: Amarillos y verdes
+    Voraz: Corregir lo de lor rojos y prioridades
     
 ~Main:
-    Archivo con datos para simulacion
+    Archivo con datos para simulacion  --> Hecho!
+    LeerArchivo funcion --> Hecho!
 
 ~Excepciones:
-    Punteros
+    Si hay algo vacio?
     Datos Nulos
     etc
 
 ~Interfaz
     Todo
 
- ~CHEQUEAR Punteros
        

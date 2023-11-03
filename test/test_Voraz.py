@@ -2,7 +2,6 @@ from library.Paciente import Paciente
 from library.Enfermero import Enfermero
 import pytest
 from typing import List
-from datetime import datetime
 
 def test_FilaVoraz():
     Raul = Paciente("36421479","Raul","Perez",["No Respira"], "Rojo")
@@ -24,7 +23,7 @@ def test_FilaVoraz():
     assert ListaPac[0].DNI != Jose.DNI #jose ni esta en la fila
     
     Enfermero1.Asignar_Lugar_FilaV(Jose, ListaPac) #agregamos a jose a la fila, deberia quedar segundo en la fila
-    assert ListaPac[0].DNI == Raul.DNI 
+    assert ListaPac[0].DNI == Raul.DNI
     assert ListaPac[1].DNI == Jose.DNI
     assert ListaPac[0].DNI != Jose.DNI 
     assert ListaPac[1].DNI != Raul.DNI

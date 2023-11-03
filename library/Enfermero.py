@@ -1,6 +1,7 @@
 from library.Paciente import Paciente
 from typing import List
 from datetime import datetime
+from library.Colores import Colores
 class Enfermero:
     def __init__(self, DNI: str, Nombre: str, Apellido: str):
         self.DNI = DNI
@@ -23,31 +24,30 @@ class Enfermero:
                 elif sintoma in ["Otalgias", "Odontalgias", "Dolores Inespecíficos Leves", "Traumatismos", "Esguinces"]:
                     Pac.Color = "Verde"
                     Pac.HorarioAtendido = datetime.now()
-                else:
+                elif (Pac.Color == "Blanco"):
                     Pac.Color = "Azul"
                     Pac.HorarioAtendido = datetime.now()
-    
             
     # break en rojo y naranja pq ya con un sintoma de ese color me basta para clasificarlos
     # con los otros sigo escuchando sus sintomas por si me los dijeron en desorden de prioridad
     
     def Asignar_Lugar_FilaDC(self, Pac: Paciente, NoAtendidos: List[Paciente]) -> None:
         i = 0
-        if(Pac.Color == "Rojo"):
-            while(i < len(NoAtendidos) and NoAtendidos[i].Color == "Rojo"):
+        if(Pac.ColorP.Color == "Rojo"):
+            while(i < len(NoAtendidos) and NoAtendidos[i].ColorP.Color == "Rojo"):
                 i += 1 #busco el ultimo paciente rojo en la fila
             NoAtendidos.insert(i,Pac) #inserto el pac desp del ultimo rojo
             
-        elif(Pac.Color == "Naranja"):
-            while(i < len(NoAtendidos) and (NoAtendidos[i].Color == "Rojo" or NoAtendidos[i].Color == "Naranja")):
+        elif(Pac.ColorP.Color == "Naranja"):
+            while(i < len(NoAtendidos) and (NoAtendidos[i].ColorP.Color == "Rojo" or NoAtendidos[i].ColorP.Color == "Naranja")):
                 i += 1 #busco el ultimo paciente naranja en la fila
             NoAtendidos.insert(i,Pac) #inserto el pac desp del ultimo naranja
             
-        elif(Pac.Color == "Amarillo"):
+        elif(Pac.ColorP.Color == "Amarillo"):
             #Divide and conquer
             hola=3
             
-        elif(Pac.Color == "Verde"):
+        elif(Pac.ColorP.Color == "Verde"):
             #Divide and conquer
             hola=3
             
@@ -55,15 +55,24 @@ class Enfermero:
             NoAtendidos.append(Pac) #si es azul, lo agrego al final de la lista
         
 
+    def DivideAndConquerAyV(NoAtendidos: List[Paciente]):
+        inicioLista = 0
+        finLista = len(NoAtendidos)-1
+        
+        while inicioLista <= finLista:
+            medioLista = (inicioLista + finLista) //2  
+                          
+
+
     def Asignar_Lugar_FilaV(self, Pac: Paciente, NoAtendidos: List[Paciente]) -> None:
         i:int = 0
         aux:int = 0  
     
-        if(Pac.Color == "Azul"):
+        if(Pac.ColorP.Color == "Azul"):
             aux=len(NoAtendidos) #si es azul va al final de la lista
         else:
             while(i< len(NoAtendidos)): #si el paciente que quiero insertar no es azul recorro la lista
-                if(Pac.Color == NoAtendidos[i].Color): #si el que quiero insertar es del mismo color que el de la lista
+                if(Pac.ColorP.Color == NoAtendidos[i].ColorP.Color): #si el que quiero insertar es del mismo color que el de la lista
                     aux = i
                 i+=1        
         NoAtendidos.insert(aux+1,Pac)   

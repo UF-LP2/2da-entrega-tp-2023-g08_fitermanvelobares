@@ -1,5 +1,6 @@
 from library.Paciente import Paciente
 from library.Enfermero import Enfermero
+from src.Colores import Colores
 import pytest
 
 def test_PacienteRojo():
@@ -13,11 +14,13 @@ def test_PacienteRojo():
     Enfermero1. Asignar_Color_Paciente(Jose)
     #enfermero asigna colores a los pacientes
     
-    assert Raul.Color == "Rojo"
-    assert not Raul.Color == "Azul"
+    assert Raul.ColorP.Color == "Rojo"
+    assert not Raul.ColorP.Color == "Azul"
+    assert Raul.ColorP.TEspera == 0
     
-    assert Jose.Color == "Rojo"
-    assert not Jose.Color == "Verde"
+    assert Jose.ColorP.Color == "Rojo"
+    assert not Jose.ColorP.Color == "Verde"
+    assert Jose.ColorP.TEspera == 0
     #chequeo colores
     
 
@@ -32,11 +35,13 @@ def test_PacienteNaranja():
     Enfermero1. Asignar_Color_Paciente(Jose)
     #enfermero asigna colores a los pacientes
 
-    assert Raul.Color == "Naranja"
-    assert not Raul.Color == "Azul"
+    assert Raul.ColorP.Color== "Naranja"
+    assert not Raul.ColorP.Color == "Azul"
+    assert Raul.ColorP.TEspera == 10
     
-    assert Jose.Color == "Naranja"
-    assert not Jose.Color == "Verde"
+    assert Jose.ColorP.Color == "Naranja"
+    assert not Jose.ColorP.Color == "Verde"
+    assert Jose.ColorP.TEspera == 10
     #chequeo colores
 
 def test_PacienteAmarillo() -> None:
@@ -50,11 +55,13 @@ def test_PacienteAmarillo() -> None:
     Enfermero1. Asignar_Color_Paciente(Jose)
     #enfermero asigna colores a los pacientes
     
-    assert Raul.Color == "Amarillo"
-    assert not Raul.Color == "Naranja"
+    assert Raul.ColorP.Color == "Amarillo"
+    assert not Raul.ColorP.Color == "Naranja"
+    assert Raul.ColorP.TEspera == 60
     
-    assert Jose.Color == "Amarillo"
-    assert not Jose.Color == "Verde"
+    assert Jose.ColorP.Color == "Amarillo"
+    assert not Jose.ColorP.Color == "Verde"
+    assert Jose.ColorP.TEspera == 60
     #chequeo colores
     
 def test_PacienteVerde():
@@ -68,11 +75,13 @@ def test_PacienteVerde():
     Enfermero1. Asignar_Color_Paciente(Jose)
     #enfermero asigna colores a los pacientes
     
-    assert Raul.Color == "Verde"
-    assert not Raul.Color == "Azul"
+    assert Raul.ColorP.Color == "Verde"
+    assert not Raul.ColorP.Color == "Azul"
+    assert Raul.ColorP.TEspera == 120
     
-    assert Jose.Color == "Verde"
-    assert not Jose.Color == "Rojo"
+    assert Jose.ColorP.Color == "Verde"
+    assert not Jose.ColorP.Color == "Rojo"
+    assert Jose.ColorP.TEspera == 120
     #chequeo colores
     
 def test_PacienteAzul():
@@ -86,9 +95,12 @@ def test_PacienteAzul():
     Enfermero1. Asignar_Color_Paciente(Jose)
     #enfermero asigna colores a los pacientes
   
-    assert Raul.Color == "Azul"
-    assert not Raul.Color == "Verde"
+    assert Raul.ColorP.Color == "Azul"
+    assert not Raul.ColorP.Color == "Verde"
+    assert Raul.ColorP.TEspera == 240
     
-    assert Jose.Color == "Azul"
-    assert not Jose.Color == "Rojo"
+    assert Jose.ColorP.Color == "Azul"
+    assert not Jose.ColorP.Color == "Rojo"
+    assert Jose.ColorP.TEspera == 240
+
     #chequeo colores
