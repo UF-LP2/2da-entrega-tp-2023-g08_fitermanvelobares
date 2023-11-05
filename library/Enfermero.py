@@ -2,6 +2,8 @@ from library.Paciente import Paciente
 from typing import List
 from datetime import datetime
 from library.Colores import Colores
+from library.DC import Binary_Search
+from library.DC import InsercionBinaria
 class Enfermero:
     def __init__(self, DNI: str, Nombre: str, Apellido: str):
         self.DNI = DNI
@@ -43,26 +45,13 @@ class Enfermero:
                 i += 1 #busco el ultimo paciente naranja en la fila
             NoAtendidos.insert(i,Pac) #inserto el pac desp del ultimo naranja
             
-        elif(Pac.ColorP.Color == "Amarillo"):
+        elif(Pac.ColorP.Color == "Amarillo" or Pac.ColorP.Color == "Verde"):
             #Divide and conquer
-            hola=3
-            
-        elif(Pac.ColorP.Color == "Verde"):
-            #Divide and conquer
-            hola=3
-            
+            InsercionBinaria(NoAtendidos, Pac)
+
         else: #es azul
             NoAtendidos.append(Pac) #si es azul, lo agrego al final de la lista
         
-
-    def DivideAndConquerAyV(NoAtendidos: List[Paciente]):
-        inicioLista = 0
-        finLista = len(NoAtendidos)-1
-        
-        while inicioLista <= finLista:
-            medioLista = (inicioLista + finLista) //2  
-                          
-
 
     def Asignar_Lugar_FilaV(self, Pac: Paciente, NoAtendidos: List[Paciente]) -> None:
         i:int = 0
