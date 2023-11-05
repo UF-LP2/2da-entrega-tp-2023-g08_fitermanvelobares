@@ -1,6 +1,6 @@
-from library.Paciente import Paciente
-from library.Enfermero import Enfermero
-from library.Colores import Colores
+from library.cPaciente import Paciente
+from library.cEnfermero import Enfermero
+from library.cColores import Colores
 import pytest
 
 def test_PacienteRojo():

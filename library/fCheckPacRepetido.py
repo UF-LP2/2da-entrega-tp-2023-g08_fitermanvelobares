@@ -1,5 +1,5 @@
-from library.PacRepetidoException import PacRepetidoException
-from library.Paciente import Paciente
+from library.ePacRepetidoException import PacRepetidoException
+from library.cPaciente import Paciente
 from typing import List
 
 def CheckPacRepetido (ListaPac:List[Paciente], Pac:Paciente):

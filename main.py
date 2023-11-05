@@ -1,10 +1,10 @@
-from library.LeerArchivo import LecturaArchivoSimulacion
+from library.fLeerArchivo import LecturaArchivoSimulacion
 import csv
 from typing import List
 from datetime import datetime
-from library.Paciente import Paciente
-from library.Enfermero import Enfermero
-from library.Medico import Medico
+from library.cPaciente import Paciente
+from library.cEnfermero import Enfermero
+from library.cMedico import Medico
 
 def main():
   print("Hello World")

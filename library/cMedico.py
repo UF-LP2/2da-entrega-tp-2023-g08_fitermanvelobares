@@ -1,4 +1,4 @@
-from library.Paciente import Paciente
+from library.cPaciente import Paciente
 from typing import List
 
 class Medico:

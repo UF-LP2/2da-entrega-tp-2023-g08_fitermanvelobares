@@ -1,6 +1,6 @@
 
-from library.Paciente import Paciente
-from library.Medico import Medico
+from library.cPaciente import Paciente
+from library.cMedico import Medico
 from typing import List
 import pytest
 
