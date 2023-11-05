@@ -1,4 +1,4 @@
-from library.fLeerArchivo import LecturaArchivoSimulacion
+from library.LeerArchivo import LecturaArchivoSimulacion
 import csv
 from typing import List
 from datetime import datetime

@@ -45,16 +45,13 @@ class Enfermero:
                 i += 1 #busco el ultimo paciente naranja en la fila
             NoAtendidos.insert(i,Pac) #inserto el pac desp del ultimo naranja
             
-        elif(Pac.ColorP.Color == "Amarillo"):
-            #Divide and conquer
-            NoAtendidos = InsercionBinaria(NoAtendidos, Pac)
-        elif(Pac.ColorP.Color == "Verde"):
+        elif(Pac.ColorP.Color == "Amarillo" or Pac.ColorP.Color == "Verde"):
             #Divide and conquer
             NoAtendidos = InsercionBinaria(NoAtendidos, Pac)
 
         else: #es azul
             NoAtendidos.append(Pac) #si es azul, lo agrego al final de la lista
-        
+        return NoAtendidos
 
     def Asignar_Lugar_FilaV(self, Pac: Paciente, NoAtendidos: List[Paciente]) -> None:
         i:int = 0

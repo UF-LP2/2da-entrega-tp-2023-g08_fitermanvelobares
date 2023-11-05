@@ -46,5 +46,6 @@ def InsercionBinaria(arr, pac: Paciente):
     tEsperaRestante = CalculoTiempoRestante(pac)
     i =  len(arr)
     j = Binary_Search(arr,tEsperaRestante,0,i-1)
-    arr.insert(j,pac)   
+    arr.insert(j,pac)  
     return arr
+

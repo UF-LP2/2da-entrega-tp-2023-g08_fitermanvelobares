@@ -3,6 +3,7 @@ from library.cEnfermero import Enfermero
 import pytest
 from typing import List
 from datetime import datetime
+from library.fDC import InsercionBinaria
 
 def test_FilaDivideConquer():
     Enfermero1 = Enfermero("57531189", "Silvio", "Mendex")
@@ -17,26 +18,26 @@ def test_FilaDivideConquer():
 
     ListaNoAtentidos = []
     
-    Enfermero1.Asignar_Lugar_FilaDC(Julio,ListaNoAtentidos) #se agrega julio a la lista. Esp hasta: 20:40
+    ListaNoAtentidos = Enfermero1.Asignar_Lugar_FilaDC(Julio,ListaNoAtentidos) #se agrega julio a la lista. Esp hasta: 20:40
     
     assert ListaNoAtentidos[0].Nombre == Julio.Nombre
     assert ListaNoAtentidos[0].Nombre != Sofia.Nombre
     #Lista = Julio
     
-    Enfermero1.Asignar_Lugar_FilaDC(Maria,ListaNoAtentidos) #se aregega a maria a la lista. Esp hasta: 16:40
+    ListaNoAtentidos = Enfermero1.Asignar_Lugar_FilaDC(Maria,ListaNoAtentidos) #se aregega a maria a la lista. Esp hasta: 16:40
     assert ListaNoAtentidos[0].Nombre == Maria.Nombre
     assert ListaNoAtentidos[0].Nombre != Julio.Nombre
     assert ListaNoAtentidos[1].Nombre == Julio.Nombre
     #Lista = Maria - Julio
     
-    Enfermero1.Asignar_Lugar_FilaDC(Sofia,ListaNoAtentidos) #se aregega a Sofia a la lista. Esp hasta: 20:15
+    ListaNoAtentidos = Enfermero1.Asignar_Lugar_FilaDC(Sofia,ListaNoAtentidos) #se aregega a Sofia a la lista. Esp hasta: 20:15
     assert ListaNoAtentidos[0].Nombre == Maria.Nombre
     assert ListaNoAtentidos[1].Nombre == Sofia.Nombre
     assert ListaNoAtentidos[2].Nombre == Julio.Nombre
     assert ListaNoAtentidos[1].Nombre != Julio.Nombre
     #Lista = Maria - Sofia - Julio
     
-    Enfermero1.Asignar_Lugar_FilaDC(Raul,ListaNoAtentidos) #se aregega a Raul a la lista. NO ESPERA
+    ListaNoAtentidos = Enfermero1.Asignar_Lugar_FilaDC(Raul,ListaNoAtentidos) #se aregega a Raul a la lista. NO ESPERA
     assert ListaNoAtentidos[0].Nombre == Raul.Nombre
     assert ListaNoAtentidos[1].Nombre == Maria.Nombre
     assert ListaNoAtentidos[2].Nombre == Sofia.Nombre
@@ -47,7 +48,7 @@ def test_FilaDivideConquer():
     assert ListaNoAtentidos[2].Nombre != Julio.Nombre
     #Lista = Raul - Maria - Sofia - Julio
      
-    Enfermero1.Asignar_Lugar_FilaDC(Pedro,ListaNoAtentidos) #se aregega a Pedro a la lista. Esp hasta:  22:21 
+    ListaNoAtentidos = Enfermero1.Asignar_Lugar_FilaDC(Pedro,ListaNoAtentidos) #se aregega a Pedro a la lista. Esp hasta:  22:21 
     assert ListaNoAtentidos[0].Nombre == Raul.Nombre
     assert ListaNoAtentidos[1].Nombre == Maria.Nombre
     assert ListaNoAtentidos[2].Nombre == Sofia.Nombre
@@ -55,8 +56,8 @@ def test_FilaDivideConquer():
     assert ListaNoAtentidos[4].Nombre == Pedro.Nombre
     #Lista = Raul - Maria - Sofia - Julio - Pedro
       
-    Enfermero1.Asignar_Lugar_FilaDC(Malena,ListaNoAtentidos) #se aregega a Malena a la lista. Esp hasta: 21:23
-    Enfermero1.Asignar_Lugar_FilaDC(Jose,ListaNoAtentidos) #se aregega a Jose a la lista. Esp hasta: 20:33
+    ListaNoAtentidos = Enfermero1.Asignar_Lugar_FilaDC(Malena,ListaNoAtentidos) #se aregega a Malena a la lista. Esp hasta: 21:23
+    ListaNoAtentidos = Enfermero1.Asignar_Lugar_FilaDC(Jose,ListaNoAtentidos) #se aregega a Jose a la lista. Esp hasta: 20:33
     
     
     
