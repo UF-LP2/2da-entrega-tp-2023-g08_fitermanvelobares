@@ -21,7 +21,7 @@ class Enfermero:
                     break
                 elif sintoma in ["Cefalea Brusca", "Paresia", "Hipertension Arterial", "Vertigo Con Afectacion Vegetativa", "Sincope", "Urgencias Psiquiatricas"]:
                     Pac.ColorP = Colores("Amarillo")  
-                elif sintoma in ["Otalgias", "Odontalgias", "Dolores Inespecíficos Leves", "Traumatismos", "Esguinces"]:
+                elif sintoma in ["Otalgias", "Odontalgias", "Dolores Inespecíficos Leves", "Traumatismos", "Esguinces"] and Pac.ColorP.Color!= "Amarillo":
                     Pac.ColorP = Colores("Verde")  
                     Pac.HorarioAtendido = datetime.now()
                 elif (Pac.ColorP.Color == "Blanco"):

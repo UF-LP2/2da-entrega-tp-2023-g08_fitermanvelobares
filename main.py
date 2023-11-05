@@ -6,15 +6,15 @@ from library.Paciente import Paciente
 from library.Enfermero import Enfermero
 from library.Medico import Medico
 
-def main() -> None:
+def main():
   print("Hello World")
-  Probando123 = []
-  LecturaArchivoSimulacion(Probando123)
+  hola = []
+  hola = LecturaArchivoSimulacion()
+  for paciente in hola:
+    print(paciente.Nombre)
+    print(paciente.Apellido)
+    print(paciente.DNI)
   
-  for paciente in Probando123:
-    print(f"Nombre: {paciente.Nombre}, Apellido: {paciente.Apellido}")
-    print("Síntomas:", paciente.Sintomas)
 
-
-if __name__== "_main_":
+if __name__== "__main__":
   main()
