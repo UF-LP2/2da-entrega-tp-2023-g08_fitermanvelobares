@@ -6,6 +6,7 @@
     cantidad enfermeros segun horario
     cantidad medicos para atender pacientes
     ^hacer con randoms 
+    envejecer pacientes
 
 ~Excepciones:
     Si hay algo vacio?
