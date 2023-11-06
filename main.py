@@ -14,14 +14,14 @@ def main():
   PacientesSimulacion = []
   PacientesSimulacion = LecturaArchivoSimulacion()
  
-  '''PacientesSimulacion = PacientesSimulacion[:80] #para que no se trabe la compu, chequeamos solo con 80 pacientes en vez de 1000
+  PacientesSimulacion = PacientesSimulacion[:80] #para que no se trabe la compu, chequeamos solo con 80 pacientes en vez de 1000
   while(len(PacientesSimulacion)>0): #se simula hasta que ya no haya pacientes
     auxHorario = random.randint(0, 23) 
     auxCantidadPacSimulacion = random.randint(1, len(PacientesSimulacion)) 
     
     Simulacion(PacientesSimulacion[:auxCantidadPacSimulacion],auxHorario,auxCantidadPacSimulacion)
     PacientesSimulacion = PacientesSimulacion[auxCantidadPacSimulacion:]
-  ''' #Simulacion
+  #Simulacion
   
   #Simulacion(PacientesSimulacion[:8],11,8) #si se quiere chequear una cant exacta de pacientes 
 
