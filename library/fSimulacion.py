@@ -5,7 +5,7 @@ import random
 from typing import List
 
 
-def Simulacion(arr:list[Paciente], Horario, CantidadPacientes):        
+def Simulacion(arr:list[Paciente], Horario, CantidadPacientes, ListaSimulacion: list[Paciente]):        
     
     print("Son las: " + str(Horario) + " hs")
     print("Atiendo a: " + str(CantidadPacientes) + " pacientes")
@@ -38,14 +38,14 @@ def Simulacion(arr:list[Paciente], Horario, CantidadPacientes):
     i = 0
     while i < CantidadPacientes: #asigno colores y lugar fila
         Enfermero1.Asignar_Color_Paciente(arr[i])
-        Enfermero1.Asignar_Lugar_FilaDC(arr[i],arr)
+        Enfermero1.Asignar_Lugar_FilaDC(arr[i],ListaSimulacion)
         print("Triage x Enf1 a: " + str(arr[i].Nombre) + " DNI: " +str(arr[i].DNI))
         print("Color: "+arr[i].ColorP.Color)
         i= i+1
         
         if Enfermero2.Disponible == True and i < CantidadPacientes: 
             Enfermero2.Asignar_Color_Paciente(arr[i])
-            Enfermero2.Asignar_Lugar_FilaDC(arr[i],arr)
+            Enfermero2.Asignar_Lugar_FilaDC(arr[i],ListaSimulacion)
             print("Triage x Enf2 a: " + str(arr[i].Nombre) + " DNI: " +str(arr[i].DNI))
             print("Color: "+arr[i].ColorP.Color)
             i = i+1
@@ -54,14 +54,14 @@ def Simulacion(arr:list[Paciente], Horario, CantidadPacientes):
         
         if Enfermero3.Disponible == True and i < CantidadPacientes: 
             Enfermero3.Asignar_Color_Paciente(arr[i])
-            Enfermero3.Asignar_Lugar_FilaDC(arr[i],arr)
+            Enfermero3.Asignar_Lugar_FilaDC(arr[i],ListaSimulacion)
             print("Triage x Enf3 a: " + str(arr[i].Nombre) + " DNI: " +str(arr[i].DNI))
             print("Color: "+arr[i].ColorP.Color)
             i = i+1
         
         if Enfermero4.Disponible == True and i < CantidadPacientes: 
             Enfermero4.Asignar_Color_Paciente(arr[i])
-            Enfermero4.Asignar_Lugar_FilaDC(arr[i],arr)
+            Enfermero4.Asignar_Lugar_FilaDC(arr[i],ListaSimulacion)
             print("Triage x Enf4 a: " + str(arr[i].Nombre) + " DNI: " +str(arr[i].DNI))
             print("Color: "+arr[i].ColorP.Color)
             i = i+1
@@ -69,7 +69,7 @@ def Simulacion(arr:list[Paciente], Horario, CantidadPacientes):
             
         if Enfermero5.Disponible == True and i < CantidadPacientes: 
             Enfermero5.Asignar_Color_Paciente(arr[i])
-            Enfermero5.Asignar_Lugar_FilaDC(arr[i],arr)
+            Enfermero5.Asignar_Lugar_FilaDC(arr[i],ListaSimulacion)
             print("Triage x Enf5 a: " + str(arr[i].Nombre) + " DNI: " +str(arr[i].DNI))
             print("Color: "+arr[i].ColorP.Color)
             i = i+1
@@ -77,16 +77,16 @@ def Simulacion(arr:list[Paciente], Horario, CantidadPacientes):
 
     #imprimo lista 
     print("Lista de pacientes: ")
-    for paciente in arr:
+    for paciente in ListaSimulacion:
         print(paciente.Nombre)
         print(paciente.Apellido)
         print(paciente.DNI)
-        print("\n  ")
+        print("\n")
     
     i = 0
     while i < CantidadPacientes: #atiendo los pacientes
         Med1.Atender_Paciente(arr)
-        print("Atendiendo a: " + str(arr[i].Nombre) + " DNI: " +str(arr[i].DNI))
+        print("Atendiendo a: " + str(ListaSimulacion[i].Nombre) + " DNI: " +str(ListaSimulacion[i].DNI))
         i += 1 
         
 

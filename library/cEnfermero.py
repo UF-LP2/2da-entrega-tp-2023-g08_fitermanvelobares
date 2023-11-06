@@ -3,7 +3,6 @@ from typing import List
 from datetime import datetime
 from library.cColores import Colores
 from library.fDC import Binary_InsertionSort
-from library.fDC import CalculoTiempoRestante
 class Enfermero:
     def __init__(self, Disponible = True, DNI = "00000000", Nombre= "John", Apellido = "Doe"):
         self.DNI = DNI
