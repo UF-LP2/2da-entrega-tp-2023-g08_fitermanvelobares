@@ -19,5 +19,9 @@
 
        
 
+simulacion:
+Hay algo que no funciona cuando lee la lista, no hace i+1... chequear
+por ej: Si son 8 pacientes en la lista "atiende y pone en la fila" 8 veces al primero y despues a todo el resto
+
 
 No Respira,Politraumatismo Grave,Coma,Convulsiones,Hemorragia Digestiva,Isquemia,Cefalea Brusca,Paresia,Hipertension Arterial,Vertigo Con Afectacion Vegetativa,Sincope,Urgencias Psiquiatricas,Otalgias,Odontalgias,Dolores Inespecíficos Leves,Traumatismos,Esguinces

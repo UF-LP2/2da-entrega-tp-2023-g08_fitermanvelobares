@@ -7,7 +7,7 @@ def test_PacienteRojo():
    
     Raul = Paciente("36421479","Raul","Perez",["No Respira"])
     Jose = Paciente("46789915","Jose","Swaig",["Otalgias", "Politraumatismo Grave"])
-    Enfermero1 = Enfermero("57531189", "Silvio", "Mendex")
+    Enfermero1 = Enfermero()
     #creo pacientes y enfermero
     
     Enfermero1.Asignar_Color_Paciente(Raul)
@@ -28,7 +28,7 @@ def test_PacienteNaranja():
    
     Raul = Paciente("36421479","Raul","Perez",["Coma"])
     Jose = Paciente("46789915","Jose","Swaig",["Otalgias", "Convulsiones"])
-    Enfermero1 = Enfermero("57531189", "Silvio", "Mendex")
+    Enfermero1 = Enfermero()
     #creo pacientes y enfermero
      
     Enfermero1. Asignar_Color_Paciente(Raul)
@@ -48,7 +48,7 @@ def test_PacienteAmarillo() -> None:
    
     Raul = Paciente("36421479","Raul","Perez",["Cefalea Brusca"])
     Jose = Paciente("46789915","Jose","Swaig",["Otalgias", "Hipertension Arterial"])
-    Enfermero1 = Enfermero("57531189", "Silvio", "Mendex")
+    Enfermero1 = Enfermero(True, "57531189", "Silvio", "Mendex")
     #creo pacientes y enfermero
      
     Enfermero1. Asignar_Color_Paciente(Raul)
@@ -68,7 +68,7 @@ def test_PacienteVerde():
    
     Raul = Paciente("36421479","Raul","Perez",["Otalgias"])
     Jose = Paciente("46789915","Jose","Swaig",["Odontalgias", "Traumatismos"])
-    Enfermero1 = Enfermero("57531189", "Silvio", "Mendex")
+    Enfermero1 = Enfermero(True, "57531189", "Silvio", "Mendex")
     #creo pacientes y enfermero
      
     Enfermero1. Asignar_Color_Paciente(Raul)
@@ -88,7 +88,7 @@ def test_PacienteAzul():
    
     Raul = Paciente("36421479","Raul","Perez",["Nada"])
     Jose = Paciente("46789915","Jose","Swaig",["Resfrio", "Comezon en el brazo"])
-    Enfermero1 = Enfermero("57531189", "Silvio", "Mendex")
+    Enfermero1 = Enfermero(True, "57531189", "Silvio", "Mendex")
     #creo pacientes y enfermero
      
     Enfermero1. Asignar_Color_Paciente(Raul)
@@ -102,5 +102,22 @@ def test_PacienteAzul():
     assert Jose.ColorP.Color == "Azul"
     assert not Jose.ColorP.Color == "Rojo"
     assert Jose.ColorP.TEspera == 240
+
+    #chequeo colores
+    
+    
+def test_EnfermeroNoDisponible():
+   
+    Raul = Paciente("36421479","Raul","Perez",["Nada"])
+    Jose = Paciente("46789915","Jose","Swaig",["Resfrio", "Comezon en el brazo"])
+    Enfermero1 = Enfermero(False, "57531189", "Silvio", "Mendex")
+    #creo pacientes y enfermero
+     
+    Enfermero1. Asignar_Color_Paciente(Raul)
+    Enfermero1. Asignar_Color_Paciente(Jose)
+    #enfermero  no asigna colores a los pacientes, siguen siendo blancos
+  
+    assert Raul.ColorP.Color == "Blanco"
+    assert Jose.ColorP.Color == "Blanco"
 
     #chequeo colores
