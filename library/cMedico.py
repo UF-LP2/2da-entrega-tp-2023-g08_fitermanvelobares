@@ -9,9 +9,13 @@ class Medico:
         self.Apellido = Apellido
     
     def Atender_Paciente(self, ListaPac: List[Paciente]):
-        if(CalculoTiempoRestante(ListaPac[0])>0):
-            ListaPac[0].Vivo = True
-        else:
-            ListaPac[0].Vivo = False #se murio el paciente por esperar mucho
-        
-        ListaPac.pop(0)
+        if ListaPac:
+            if (CalculoTiempoRestante(ListaPac[0])) > 0:
+                ListaPac[0].Vivo = True
+            else:
+                ListaPac[0].Vivo = False #se murio el paciente por esperar mucho
+            ListaPac.pop(0)
+            
+            
+            
+            

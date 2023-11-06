@@ -72,8 +72,7 @@ def Simulacion(arr:list[Paciente], Horario, CantidadPacientes, ListaSimulacion: 
             Enfermero5.Asignar_Lugar_FilaDC(arr[i],ListaSimulacion)
             print("Triage x Enf5 a: " + str(arr[i].Nombre) + " DNI: " +str(arr[i].DNI))
             print("Color: "+arr[i].ColorP.Color)
-            i = i+1
-        
+            i = i+1   
 
     #imprimo lista 
     print("Lista de pacientes: ")
@@ -83,11 +82,10 @@ def Simulacion(arr:list[Paciente], Horario, CantidadPacientes, ListaSimulacion: 
         print(paciente.DNI)
         print("\n")
     
-    i = 0
-    while i < CantidadPacientes: #atiendo los pacientes
-        Med1.Atender_Paciente(arr)
-        print("Atendiendo a: " + str(ListaSimulacion[i].Nombre) + " DNI: " +str(ListaSimulacion[i].DNI))
-        i += 1 
-        
+    
+    for paciente in ListaSimulacion:
+        print("Atendiendo a: " + str(paciente.Nombre) + " DNI: " + str(paciente.DNI))
+        Med1.Atender_Paciente(ListaSimulacion)
+
 
     
