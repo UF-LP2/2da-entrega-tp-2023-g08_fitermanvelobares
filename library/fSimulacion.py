@@ -83,9 +83,16 @@ def Simulacion(arr:list[Paciente], Horario, CantidadPacientes, ListaSimulacion: 
         print("\n")
     
     
-    for paciente in ListaSimulacion:
-        print("Atendiendo a: " + str(paciente.Nombre) + " DNI: " + str(paciente.DNI))
-        Med1.Atender_Paciente(ListaSimulacion)
-
-
+    auxLista = len (ListaSimulacion)
+    for i in range(auxLista):
+            print("Atendiendo a: " + str(ListaSimulacion[i].Nombre) + " DNI: " + str(ListaSimulacion[i].DNI))
+            #Med1.Atender_Paciente(ListaSimulacion)
     
+   
+    print("Lista de pacientes post atender: ")
+    for paciente in ListaSimulacion:
+        print(paciente.Nombre)
+        print(paciente.Apellido)
+        print(paciente.DNI)
+        print("\n")
+
