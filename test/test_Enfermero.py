@@ -16,11 +16,11 @@ def test_PacienteRojo():
     
     assert Raul.ColorP.Color == "Rojo"
     assert not Raul.ColorP.Color == "Azul"
-    assert Raul.ColorP.TEspera == 0
+    assert Raul.ColorP.TEspera == 1
     
     assert Jose.ColorP.Color == "Rojo"
     assert not Jose.ColorP.Color == "Verde"
-    assert Jose.ColorP.TEspera == 0
+    assert Jose.ColorP.TEspera == 1
     #chequeo colores
     
 
