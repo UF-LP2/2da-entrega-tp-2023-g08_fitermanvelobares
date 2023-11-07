@@ -2,23 +2,13 @@
     Ambos: Paciente repetido no volver a insertar en la fila
     
 ~Main:
-    Simulacion
-    envejecer pacientes
-
-~Excepciones:
-    Si hay algo vacio?
-    Datos Nulos
-    Paciente repetido
-    etc
+    Simulacion --> dividir en subfunciones para facilitar mantenimiento
 
 ~Interfaz
-    Todo
+    Complejizarla un poco mas
+        Quiza usar los modulos de la simulacion para ejecutarlo por partes
+        Cambiar algunos colores o algo del estilo
+    Tiene que correr cuando corremos el main o puede ser aparte?
 
-       
-
-simulacion:
-Hay algo que no funciona cuando lee la lista, no hace i+1... chequear
-por ej: Si son 8 pacientes en la lista "atiende y pone en la fila" 8 veces al primero y despues a todo el resto
-
-
+~Extras:
 No Respira,Politraumatismo Grave,Coma,Convulsiones,Hemorragia Digestiva,Isquemia,Cefalea Brusca,Paresia,Hipertension Arterial,Vertigo Con Afectacion Vegetativa,Sincope,Urgencias Psiquiatricas,Otalgias,Odontalgias,Dolores Inespecíficos Leves,Traumatismos,Esguinces
