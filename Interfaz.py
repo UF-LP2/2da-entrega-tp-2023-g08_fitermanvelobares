@@ -25,7 +25,7 @@ def Simul():
 
     #Comentar o descomentar el bloque de código que se quiera ejecutar
     
-    #PacientesSimulacion = PacientesSimulacion[:80] # para que no se trabe la compu, chequeamos solo con 80 pacientes en vez de 1000 (Comentar para chequear todos)
+    '''PacientesSimulacion = PacientesSimulacion[:180]''' # para que no se trabe la compu, chequeamos solo con 80 pacientes en vez de 1000 (Comentar para chequear todos)
     while(len(PacientesSimulacion)>0): #se simula hasta que ya no haya pacientes
          auxHorario = random.randint(0, 23)
          auxCantidadPacSimulacion = random.randint(1, len(PacientesSimulacion))
