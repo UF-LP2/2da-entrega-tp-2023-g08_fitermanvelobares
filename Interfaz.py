@@ -40,7 +40,7 @@ def ejecutar_simulacion():
     
 root = tk.Tk()
 root.title("Hospital")
-root.geometry("550x550")
+root.geometry("700x550")
 root.config(bg='lightblue')
 root.resizable(width=False,height=False)
 

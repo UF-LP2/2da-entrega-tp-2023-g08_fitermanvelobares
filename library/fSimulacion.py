@@ -88,6 +88,8 @@ def Simulacion(arr:list[Paciente], Horario, CantidadPacientes, ListaSimulacion: 
     auxLista = len(ListaSimulacion)
     i = 0  # Inicializa el índice en 0
 
+    ContVivos = 0
+    ContMuertos = 0
     while i < auxLista:
         paciente_actual = ListaSimulacion[i]  # Obtiene el paciente actual
         print("Atendiendo a: " + str(paciente_actual.Nombre) + " DNI: " + str(paciente_actual.DNI))
@@ -95,14 +97,20 @@ def Simulacion(arr:list[Paciente], Horario, CantidadPacientes, ListaSimulacion: 
         print("Esta Vivo o muerto?: ", end=" ") # el end= para que vivo o muerto se imprima en el mismo renglon
         if paciente_actual.Vivo:
             print("Vivo")
+            ContVivos = ContVivos +1
         else:
             print("Muerto")
+            ContMuertos = ContMuertos +1
         auxLista = len(ListaSimulacion)  # Actualiza la longitud de la lista
     
-    
+    print("Pacientes que fallecieron: "+str(ContMuertos)) 
+    print("Pacientes que siguen vivos: "+str(ContVivos)) 
     print("Lista de pacientes post atender:\n")
     for paciente in ListaSimulacion:
-        print(paciente.Nombre)
-        print(paciente.Apellido)
-        print(paciente.DNI)
-        print("\n")
+        if ListaSimulacion:
+            print(paciente.Nombre)
+            print(paciente.Apellido)
+            print(paciente.DNI)
+            print("\n")
+        else:
+             print("ya se atendieron todos los pacientes!")

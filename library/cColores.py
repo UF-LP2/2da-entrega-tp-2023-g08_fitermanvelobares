@@ -3,7 +3,7 @@ class Colores:
     def __init__(self,Color="Blanco"):
         self.Color = Color
         if Color == "Rojo":
-            self.TEspera = 0.1 #para que de tiempo de hacer las cuentas en la simulacion, en la vida real es 0 pq se hacen cosas en paralelo
+            self.TEspera = 0.2 #para que de tiempo de hacer las cuentas en la simulacion, en la vida real es 0 pq se hacen cosas en paralelo
         elif Color == "Naranja":
             self.TEspera = 10
         elif Color == "Amarillo":
