@@ -82,17 +82,20 @@ def Simulacion(arr:list[Paciente], Horario, CantidadPacientes, ListaSimulacion: 
         print(paciente.DNI)
         print("\n")
     
+
+    auxLista = len(ListaSimulacion)
+    i = 0  # Inicializa el índice en 0
+
+    while i < auxLista:
+        paciente_actual = ListaSimulacion[i]  # Obtiene el paciente actual
+        print("Atendiendo a: " + str(paciente_actual.Nombre) + " DNI: " + str(paciente_actual.DNI))
+        Med1.Atender_Paciente(ListaSimulacion)
+        auxLista = len(ListaSimulacion)  # Actualiza la longitud de la lista
     
-    auxLista = len (ListaSimulacion)
-    for i in range(auxLista):
-            print("Atendiendo a: " + str(ListaSimulacion[i].Nombre) + " DNI: " + str(ListaSimulacion[i].DNI))
-            #Med1.Atender_Paciente(ListaSimulacion)
     
-   
     print("Lista de pacientes post atender: ")
     for paciente in ListaSimulacion:
         print(paciente.Nombre)
         print(paciente.Apellido)
         print(paciente.DNI)
         print("\n")
-
