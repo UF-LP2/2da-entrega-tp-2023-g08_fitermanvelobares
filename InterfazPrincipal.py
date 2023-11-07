@@ -4,6 +4,7 @@ from library.cEnfermero import Enfermero
 from library.cMedico import Medico
 from library.LeerArchivo import LecturaArchivoSimulacion
 from library.fDC import CalculoTiempoRestante
+from PIL import Image, ImageTk
 
 # Defino colores
 colores_mapping = {
@@ -89,8 +90,23 @@ def atender_pacientes():
 
 # Crear la ventana principal
 window = tk.Tk()
-window.title("Interfaz de Pacientes")
+window.title("Hospital FitBares")
 window.geometry("1000x800")
+
+# Cargar y mostrar la imagen en un marco en la parte inferior
+imagen = Image.open("logo2.gif")
+
+#Cambio el tamaño de la imagen
+nuevo_ancho = imagen.width // 2
+nuevo_alto = imagen.height // 2
+imagen.thumbnail((nuevo_ancho, nuevo_alto))
+imagen = ImageTk.PhotoImage(imagen)
+imagen_frame = tk.Frame(window)
+imagen_frame.pack(side="bottom")
+
+imagen_label = tk.Label(imagen_frame, image=imagen)
+imagen_label.pack()
+
 
 # Crear un marco para los botones y configurar la orientación para que estén uno al lado del otro
 button_frame = tk.Frame(window)
@@ -105,7 +121,7 @@ atender_button = tk.Button(button_frame, text="Atender Pacientes", command=atend
 atender_button.pack(side="left")
 
 # Crear un canvas para mostrar a los pacientes
-canvas = tk.Canvas(window, width=canvas_width, height=canvas_height, bg="lightblue")
+canvas = tk.Canvas(window, width=canvas_width, height=canvas_height, bg="white")
 canvas.pack()
 
 # Iniciar el bucle principal de la interfaz

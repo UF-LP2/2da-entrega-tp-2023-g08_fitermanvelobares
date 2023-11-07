@@ -1,15 +1,3 @@
-~Algoritmo:
-    Paciente repetido no volver a insertar en la fila
-
-    
-~Main:
-    Simulacion --> dividir en subfunciones para facilitar mantenimiento
-
-~Interfaz
-    Complejizarla un poco mas
-        Quiza usar los modulos de la simulacion para ejecutarlo por partes
-        Cambiar algunos colores o algo del estilo
-    Tiene que correr cuando corremos el main o puede ser aparte?
 
 ~Extras:
 No Respira,Politraumatismo Grave,Coma,Convulsiones,Hemorragia Digestiva,Isquemia,Cefalea Brusca,Paresia,Hipertension Arterial,Vertigo Con Afectacion Vegetativa,Sincope,Urgencias Psiquiatricas,Otalgias,Odontalgias,Dolores Inespecíficos Leves,Traumatismos,Esguinces, hipo, resfrio, me duele el pie, piojos

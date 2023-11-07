@@ -4,12 +4,14 @@ from library.cMedico import Medico
 import random
 from typing import List
 from library.fDC import CalculoTiempoRestante
+from datetime import datetime
 
 
-def Simulacion(arr:list[Paciente], Horario, CantidadPacientes, ListaSimulacion: list[Paciente]):        
-    
+def Simulacion(arr:list[Paciente], CantidadPacientes, ListaSimulacion: list[Paciente]):        
+    Horario = datetime.now().hour #me importa solo la hora pasa saber cuantos enfermeros tengo
     print("Son las: " + str(Horario) + " hs")
     print("Atiendo a: " + str(CantidadPacientes) + " pacientes")
+        
     Med1 = Medico()
     #creo los medicos que van a atender los pacientes. La cantidad es simbolica ya que no se esta ejecutando en paralelo
     #por eso creamos uno solo y lo llamamos en un bucle
