@@ -3,6 +3,7 @@ from library.cPaciente import Paciente
 from library.cMedico import Medico
 import random
 from typing import List
+from library.fDC import CalculoTiempoRestante
 
 
 def Simulacion(arr:list[Paciente], Horario, CantidadPacientes, ListaSimulacion: list[Paciente]):        
@@ -80,8 +81,9 @@ def Simulacion(arr:list[Paciente], Horario, CantidadPacientes, ListaSimulacion: 
         print(paciente.Nombre)
         print(paciente.Apellido)
         print(paciente.DNI)
+        print(paciente.ColorP.Color)
+        print("tiempo maximo de espera restante para el paciente en minutoss: "+ str(CalculoTiempoRestante(paciente)))
         print("\n")
-    
 
     auxLista = len(ListaSimulacion)
     i = 0  # Inicializa el índice en 0
@@ -90,10 +92,15 @@ def Simulacion(arr:list[Paciente], Horario, CantidadPacientes, ListaSimulacion: 
         paciente_actual = ListaSimulacion[i]  # Obtiene el paciente actual
         print("Atendiendo a: " + str(paciente_actual.Nombre) + " DNI: " + str(paciente_actual.DNI))
         Med1.Atender_Paciente(ListaSimulacion)
+        print("Esta Vivo o muerto?: ", end=" ") # el end= para que vivo o muerto se imprima en el mismo renglon
+        if paciente_actual.Vivo:
+            print("Vivo")
+        else:
+            print("Muerto")
         auxLista = len(ListaSimulacion)  # Actualiza la longitud de la lista
     
     
-    print("Lista de pacientes post atender: ")
+    print("Lista de pacientes post atender:\n")
     for paciente in ListaSimulacion:
         print(paciente.Nombre)
         print(paciente.Apellido)

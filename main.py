@@ -10,21 +10,20 @@ from library.fSimulacion import Simulacion
 
 
 def main():
-  
   PacientesSimulacion = []
   PacientesSimulacion = LecturaArchivoSimulacion()
   ListaSimulacion = []
  
   '''PacientesSimulacion = PacientesSimulacion[:80]''' #para que no se trabe la compu, chequeamos solo con 80 pacientes en vez de 1000
-  '''while(len(PacientesSimulacion)>0): #se simula hasta que ya no haya pacientes
+  while(len(PacientesSimulacion)>0): #se simula hasta que ya no haya pacientes
     auxHorario = random.randint(0, 23) 
     auxCantidadPacSimulacion = random.randint(1, len(PacientesSimulacion)) 
     
     Simulacion(PacientesSimulacion[:auxCantidadPacSimulacion],auxHorario,auxCantidadPacSimulacion,ListaSimulacion)
-    PacientesSimulacion = PacientesSimulacion[auxCantidadPacSimulacion:]'''
+    PacientesSimulacion = PacientesSimulacion[auxCantidadPacSimulacion:]
   #Simulacion con horario elegido como random en vez del actual para que se vean los casos de diferente cantidad de enfermeros
   
-  Simulacion(PacientesSimulacion[:8],11,8,ListaSimulacion) #si se quiere chequear una cant exacta de pacientes 
+  '''Simulacion(PacientesSimulacion[:8],11,8,ListaSimulacion)''' #si se quiere chequear una cant exacta de pacientes 
 
 if __name__== "__main__":
   main()
