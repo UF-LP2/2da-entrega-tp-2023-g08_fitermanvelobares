@@ -2,6 +2,7 @@ iniconfig==2.0.0
 numpy==1.25.2
 packaging==23.1
 pandas==2.0.3
+Pillow==10.1.0
 pluggy==1.2.0
 PyQt6==6.6.0
 PyQt6-Qt6==6.6.0
