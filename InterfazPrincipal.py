@@ -31,7 +31,7 @@ num_columnas = 10
 
 # Tamaño fijo del canvas
 canvas_width = 700
-canvas_height = 600
+canvas_height = 500
 
 # Asigno colores a pacientes y los muestro en interfaz
 def asignar_colores_pacientes():
@@ -87,7 +87,7 @@ def asignar_colores_pacientes():
 #ventana principal
 window = tk.Tk()
 window.title("Hospital FitBares")
-window.geometry("700x700")
+window.geometry("700x500")
 
 #imagen en la parte inferior
 imagen = Image.open("logo2.gif")
@@ -99,6 +99,7 @@ imagen.thumbnail((nuevo_ancho, nuevo_alto))
 imagen = ImageTk.PhotoImage(imagen)
 imagen_frame = tk.Frame(window)
 imagen_frame.pack(side="bottom")
+
 
 imagen_label = tk.Label(imagen_frame, image=imagen)
 imagen_label.pack()
