@@ -5,6 +5,7 @@ from library.cMedico import Medico
 from library.LeerArchivo import LecturaArchivoSimulacion
 from library.fDC import CalculoTiempoRestante
 from PIL import Image, ImageTk
+import time
 
 # Defino colores
 colores_mapping = {
@@ -26,17 +27,17 @@ pacientes = []
 PacientesOrdenados = []
 
 # Número de columnas
-num_columnas = 15
+num_columnas = 10
 
 # Tamaño fijo del canvas
-canvas_width = 1100
-canvas_height = 700
+canvas_width = 700
+canvas_height = 600
 
 # Asigno colores a pacientes y los muestro en interfaz
 def asignar_colores_pacientes():
     global pacientes
     pacientes = LecturaArchivoSimulacion()
-    pacientes = pacientes[:120]
+    pacientes = pacientes[:45]
 
     for idx, paciente in enumerate(pacientes):
         enfermero = Enfermero()
@@ -51,7 +52,7 @@ def asignar_colores_pacientes():
         columna = idx % num_columnas
 
         # Calculo coordenadas cuadrado del paciente
-        x1 = columna * (tamano_cuadrado + espacio_entre_pacientes)
+        x1 = columna * (tamano_cuadrado + espacio_entre_pacientes)+3
         y1 = fila * (tamano_cuadrado + espacio_entre_pacientes)
         x2 = x1 + tamano_cuadrado
         y2 = y1 + tamano_cuadrado
@@ -61,13 +62,11 @@ def asignar_colores_pacientes():
 
         #Nombre pac
         canvas.create_text((x1 + x2) / 2, (y1 + y2) / 2, text=f"{paciente.Nombre}", fill="black")
-
-def atender_pacientes():
-    global pacientes
+        
     for paciente in PacientesOrdenados:
         medico = Medico()
         medico.Atender_Paciente([paciente])
-
+        
         color_pac = colores_mapping.get(paciente.ColorP.Color, "white")
 
         #Fila y la columna en la cuadrícula
@@ -79,15 +78,16 @@ def atender_pacientes():
         y1 = fila * (tamano_cuadrado + espacio_entre_pacientes)
         x2 = x1 + tamano_cuadrado
         y2 = y1 + tamano_cuadrado
-
+        
         # Estado del paciente (Vivo o Muerto) dentro del cuadrado
         estado_paciente = "Vivo" if paciente.Vivo else "Muerto"
         canvas.create_text((x1 + x2) / 2, (y1 + y2) / 2 + 15, text=estado_paciente, fill="black")
 
+
 #ventana principal
 window = tk.Tk()
 window.title("Hospital FitBares")
-window.geometry("1000x800")
+window.geometry("700x700")
 
 #imagen en la parte inferior
 imagen = Image.open("logo2.gif")
@@ -109,11 +109,9 @@ button_frame = tk.Frame(window)
 button_frame.pack(side="top")
 
 
-asignar_button = tk.Button(button_frame, text="Asignar Colores", command=asignar_colores_pacientes)
+asignar_button = tk.Button(button_frame, text="Simular", command=asignar_colores_pacientes)
 asignar_button.pack(side="left")
 
-atender_button = tk.Button(button_frame, text="Atender Pacientes", command=atender_pacientes)
-atender_button.pack(side="left")
 
 # Canvas para mostrar a los pacientes
 canvas = tk.Canvas(window, width=canvas_width, height=canvas_height, bg="white")

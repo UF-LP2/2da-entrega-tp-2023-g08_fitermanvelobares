@@ -88,6 +88,7 @@ def Simulacion(arr:list[Paciente], CantidadPacientes, ListaSimulacion: list[Paci
         print("\n")
 
     auxLista = len(ListaSimulacion)
+    auxLista2=auxLista
     i = 0  # Inicializa el índice en 0
 
     ContVivos = 0
@@ -108,11 +109,12 @@ def Simulacion(arr:list[Paciente], CantidadPacientes, ListaSimulacion: list[Paci
     print("Pacientes que fallecieron: "+str(ContMuertos)) 
     print("Pacientes que siguen vivos: "+str(ContVivos)) 
     print("Lista de pacientes post atender:\n")
-    for paciente in ListaSimulacion:
+    
+    for j in range(0,auxLista2):
         if ListaSimulacion:
-            print(paciente.Nombre)
-            print(paciente.Apellido)
-            print(paciente.DNI)
+            print(ListaSimulacion[j].Nombre)
+            print(ListaSimulacion[j].Apellido)
+            print(ListaSimulacion[j].DNI)
             print("\n")
         else:
              print("ya se atendieron todos los pacientes!")
