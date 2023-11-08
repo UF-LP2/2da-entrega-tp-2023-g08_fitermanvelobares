@@ -7,7 +7,7 @@ from library.Paciente import Paciente
 from library.Enfermero import Enfermero
 from library.Medico import Medico
 from library.Simulacion import Simulacion
-
+from InterfazPrincipal import asignar_colores_pacientes
 
 def main():
   PacientesSimulacion = []
@@ -24,5 +24,11 @@ def main():
   
   '''Simulacion(PacientesSimulacion[:8],8,ListaSimulacion)''' #si se quiere chequear una cant exacta de pacientes 
 
+  #Simulacion 1000 pacientes^^
+    
+  #Interfaz:
+  asignar_colores_pacientes()
+  
+  
 if __name__== "__main__":
   main()
