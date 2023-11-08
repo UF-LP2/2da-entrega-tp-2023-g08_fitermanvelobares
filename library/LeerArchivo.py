@@ -1,5 +1,5 @@
 import csv
-from library.cPaciente import Paciente
+from library.Paciente import Paciente
 from typing import List
 
 def LecturaArchivoSimulacion():

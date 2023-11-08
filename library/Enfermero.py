@@ -1,8 +1,8 @@
-from library.cPaciente import Paciente
+from library.Paciente import Paciente
 from typing import List
 from datetime import datetime
-from library.cColores import Colores
-from library.fDC import Binary_InsertionSort
+from library.Colores import Colores
+from library.DC import Binary_InsertionSort
 import time
 class Enfermero:
     def __init__(self, Disponible = True, DNI = "00000000", Nombre= "John", Apellido = "Doe"):

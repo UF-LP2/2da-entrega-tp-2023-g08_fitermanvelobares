@@ -1,6 +1,6 @@
-from library.cPaciente import Paciente
-from library.cEnfermero import Enfermero
-from library.fDC import CalculoTiempoRestante
+from library.Paciente import Paciente
+from library.Enfermero import Enfermero
+from library.DC import CalculoTiempoRestante
 import pytest
 from typing import List
 from datetime import datetime

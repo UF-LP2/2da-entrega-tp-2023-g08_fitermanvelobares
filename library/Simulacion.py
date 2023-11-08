@@ -1,9 +1,9 @@
-from library.cEnfermero import Enfermero
-from library.cPaciente import Paciente
-from library.cMedico import Medico
+from library.Enfermero import Enfermero
+from library.Paciente import Paciente
+from library.Medico import Medico
 import random
 from typing import List
-from library.fDC import CalculoTiempoRestante
+from library.DC import CalculoTiempoRestante
 from datetime import datetime
 
 

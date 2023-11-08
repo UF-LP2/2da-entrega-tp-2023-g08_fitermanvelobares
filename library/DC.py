@@ -1,5 +1,6 @@
-from library.cPaciente import Paciente
+from library.Paciente import Paciente
 from datetime import datetime
+from library.Colores import Colores
 
 def CalculoTiempoRestante(pac:Paciente):
     tEsperaPaciente = datetime.now() - pac.HorarioTriage
@@ -9,6 +10,17 @@ def CalculoTiempoRestante(pac:Paciente):
     tiempo_maximo_espera = pac.ColorP.TEspera  # tiempo máximo de espera del paciente
     tEsperaRestante = tiempo_maximo_espera - minutos_transcurridos  # diferencia en minutos
     
+    #actualizo los colores si lo que le queda de espera es igual o menor o lo de otro color
+    if(pac.ColorP.Color == "Naranja" and tEsperaRestante<=5):
+        pac.ColorP = Colores("Rojo")
+    if(pac.ColorP.Color == "Amarillo" and tEsperaRestante<=10):
+        pac.ColorP = Colores("Naranja")
+    if(pac.ColorP.Color == "Verde" and tEsperaRestante<=60):
+        pac.ColorP = Colores("Amarillo")
+    if(pac.ColorP.Color == "Azul" and tEsperaRestante<=120):
+        pac.ColorP = Colores("Verde")
+        
+        
     return tEsperaRestante
         
 

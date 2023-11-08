@@ -3,10 +3,10 @@ import csv
 from typing import List
 import random
 from datetime import datetime
-from library.cPaciente import Paciente
-from library.cEnfermero import Enfermero
-from library.cMedico import Medico
-from library.fSimulacion import Simulacion
+from library.Paciente import Paciente
+from library.Enfermero import Enfermero
+from library.Medico import Medico
+from library.Simulacion import Simulacion
 
 
 def main():

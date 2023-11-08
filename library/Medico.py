@@ -1,6 +1,6 @@
-from library.cPaciente import Paciente
+from library.Paciente import Paciente
 from typing import List
-from library.fDC import CalculoTiempoRestante
+from library.DC import CalculoTiempoRestante
 
 class Medico:
     def __init__(self, DNI = "99999999", Nombre = "John", Apellido = "Doe"):

@@ -1,6 +1,6 @@
 from typing import List
 from datetime import datetime
-from library.cColores import Colores
+from library.Colores import Colores
 class Paciente:
     def __init__(self, DNI: str, Nombre: str, Apellido: str, Sintomas: List[str], Color = "Blanco", HorarioTriage = None, Vivo = True):
         self.DNI = DNI
