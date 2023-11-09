@@ -2,7 +2,7 @@ import tkinter as tk
 from library.Paciente import Paciente
 from library.Enfermero import Enfermero
 from library.Medico import Medico
-from library.LeerArchivo import LecturaArchivoSimulacion
+from LeerArchivo import LecturaArchivoSimulacion
 from library.DC import CalculoTiempoRestante
 from PIL import Image, ImageTk
 import time

@@ -1,4 +1,3 @@
-from library.LeerArchivo import LecturaArchivoSimulacion
 import csv
 from typing import List
 import random
@@ -8,6 +7,8 @@ from library.Enfermero import Enfermero
 from library.Medico import Medico
 from library.Simulacion import Simulacion
 from InterfazPrincipal import asignar_colores_pacientes
+from LeerArchivo import LecturaArchivoSimulacion
+
 
 def main():
   PacientesSimulacion = []
@@ -32,3 +33,4 @@ def main():
   
 if __name__== "__main__":
   main()
+  
