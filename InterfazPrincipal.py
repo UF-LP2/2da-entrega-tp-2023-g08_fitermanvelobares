@@ -3,8 +3,8 @@ from library.Paciente import Paciente
 from library.Enfermero import Enfermero
 from library.Medico import Medico
 from LeerArchivo import LecturaArchivoSimulacion
-from library.DC import CalculoTiempoRestante
 from PIL import Image, ImageTk
+import random
 import time
 
 # Defino colores
@@ -33,17 +33,28 @@ num_columnas = 10
 canvas_width = 700
 canvas_height = 500
 
-# Asigno colores a pacientes y los muestro en interfaz
-def asignar_colores_pacientes():
-    global pacientes
-    pacientes = LecturaArchivoSimulacion()
-    pacientes = pacientes[:45]
+#posicion en la lista del archivo
+posicion_actual = 0
 
+
+def limpiar_canvas():
+    canvas.delete("all")
+
+# Asigno colores a pacientes y los muestro en interfaz
+def Interfaz():
+    limpiar_canvas()
+    global pacientes, PacientesOrdenados, posicion_actual
+    PacientesOrdenados = []
+
+    AuxPacientes = LecturaArchivoSimulacion()
+    auxCantidadPacSimulacion = random.randint(1, 50) 
+    pacientes = AuxPacientes[posicion_actual:posicion_actual+auxCantidadPacSimulacion]
+    
     for idx, paciente in enumerate(pacientes):
         enfermero = Enfermero()
         enfermero.Asignar_Color_Paciente(paciente)
         enfermero.Asignar_Lugar_FilaDC(paciente, PacientesOrdenados)
-
+    
     for idx, paciente in enumerate(PacientesOrdenados):
         color_pac = colores_mapping.get(paciente.ColorP.Color, "white") # Color del cuadrado = color del paciente
 
@@ -82,6 +93,9 @@ def asignar_colores_pacientes():
         # Estado del paciente (Vivo o Muerto) dentro del cuadrado
         estado_paciente = "Vivo" if paciente.Vivo else "Muerto"
         canvas.create_text((x1 + x2) / 2, (y1 + y2) / 2 + 15, text=estado_paciente, fill="black")
+    
+    PacientesOrdenados = []
+    posicion_actual += auxCantidadPacSimulacion
 
 
 #ventana principal
@@ -110,9 +124,11 @@ button_frame = tk.Frame(window)
 button_frame.pack(side="top")
 
 
-asignar_button = tk.Button(button_frame, text="Simular", command=asignar_colores_pacientes)
+asignar_button = tk.Button(button_frame, text="Simular", command=Interfaz)
 asignar_button.pack(side="left")
 
+limpiar_button = tk.Button(button_frame, text="Borrar Graficos", command=limpiar_canvas)
+limpiar_button.pack(side="left")
 
 # Canvas para mostrar a los pacientes
 canvas = tk.Canvas(window, width=canvas_width, height=canvas_height, bg="white")

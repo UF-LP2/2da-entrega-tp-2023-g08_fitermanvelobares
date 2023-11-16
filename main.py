@@ -6,7 +6,7 @@ from library.Paciente import Paciente
 from library.Enfermero import Enfermero
 from library.Medico import Medico
 from library.Simulacion import Simulacion
-from InterfazPrincipal import asignar_colores_pacientes
+from InterfazPrincipal import Interfaz
 from LeerArchivo import LecturaArchivoSimulacion
 
 
@@ -28,7 +28,7 @@ def main():
   #Simulacion 1000 pacientes^^
     
   #Interfaz:
-  asignar_colores_pacientes()
+  Interfaz()
   
   
 if __name__== "__main__":
