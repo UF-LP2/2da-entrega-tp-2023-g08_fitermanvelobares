@@ -16,16 +16,14 @@ class Enfermero:
             for sintoma in Pac.Sintomas:
                 if sintoma in ["No Respira", "Politraumatismo Grave"]:
                     Pac.ColorP = Colores("Rojo")  
-                    if(Pac.Envejecido == False):
-                        horario_actual = datetime.now()
-                        Pac.HorarioTriage = horario_actual
+                    horario_actual = datetime.now()
+                    Pac.HorarioTriage = horario_actual
                     break
                 
                 elif sintoma in ["Coma", "Convulsiones", "Hemorragia Digestiva", "Isquemia"]:
                     Pac.ColorP = Colores("Naranja")  
-                    if(Pac.Envejecido == False):
-                        horario_actual = datetime.now()
-                        Pac.HorarioTriage = horario_actual   
+                    horario_actual = datetime.now()
+                    Pac.HorarioTriage = horario_actual   
                     break
                 
                 elif sintoma in ["Cefalea Brusca", "Paresia", "Hipertension Arterial", "Vertigo Con Afectacion Vegetativa", "Sincope", "Urgencias Psiquiatricas"]:
@@ -54,8 +52,9 @@ class Enfermero:
     # con los otros sigo escuchando sus sintomas por si me los dijeron en desorden de prioridad
 
     def Asignar_Lugar_FilaDC(self, Pac: Paciente, NoAtendidos: List[Paciente]) -> None:
-        if(self.Disponible == True):
-            NoAtendidos.append(Pac) #inserto Pac en la fila
-            if(Pac.ColorP.Color != "Azul"):
-                Binary_InsertionSort(NoAtendidos) #ordeno la fila si Pac no es azul (si es azul esta ok al final de la fila)
-            return NoAtendidos            
+        if self.Disponible:
+            if Pac not in NoAtendidos:  # Verificar si el paciente no está en la lista
+                NoAtendidos.append(Pac)  # Insertar Pac en la fila
+            if Pac.ColorP.Color != "Azul":
+                Binary_InsertionSort(NoAtendidos)  # Ordenar la fila si Pac no es azul
+        return NoAtendidos
