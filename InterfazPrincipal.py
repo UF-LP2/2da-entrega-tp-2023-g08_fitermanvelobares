@@ -36,14 +36,17 @@ canvas_height = 500
 #posicion en la lista del archivo
 posicion_actual = 0
 
+canvas = None
 
 def limpiar_canvas():
-    canvas.delete("all")
+    global canvas
+    if canvas:
+        canvas.delete("all")
 
 # Asigno colores a pacientes y los muestro en interfaz
 def Interfaz():
     limpiar_canvas()
-    global pacientes, PacientesOrdenados, posicion_actual
+    global pacientes, PacientesOrdenados, posicion_actual, canvas
     PacientesOrdenados = []
 
     AuxPacientes = LecturaArchivoSimulacion()
@@ -136,3 +139,5 @@ canvas.pack()
 
 
 window.mainloop()
+
+

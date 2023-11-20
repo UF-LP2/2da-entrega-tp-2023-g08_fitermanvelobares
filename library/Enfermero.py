@@ -16,27 +16,36 @@ class Enfermero:
             for sintoma in Pac.Sintomas:
                 if sintoma in ["No Respira", "Politraumatismo Grave"]:
                     Pac.ColorP = Colores("Rojo")  
-                    horario_actual = datetime.now()
-                    Pac.HorarioTriage = horario_actual
+                    if(Pac.Envejecido == False):
+                        horario_actual = datetime.now()
+                        Pac.HorarioTriage = horario_actual
                     break
+                
                 elif sintoma in ["Coma", "Convulsiones", "Hemorragia Digestiva", "Isquemia"]:
                     Pac.ColorP = Colores("Naranja")  
-                    horario_actual = datetime.now()
-                    Pac.HorarioTriage = horario_actual
+                    if(Pac.Envejecido == False):
+                        horario_actual = datetime.now()
+                        Pac.HorarioTriage = horario_actual   
                     break
+                
                 elif sintoma in ["Cefalea Brusca", "Paresia", "Hipertension Arterial", "Vertigo Con Afectacion Vegetativa", "Sincope", "Urgencias Psiquiatricas"]:
                     Pac.ColorP = Colores("Amarillo")  
-                    horario_actual = datetime.now()
-                    Pac.HorarioTriage = horario_actual
+                    if(Pac.Envejecido == False):
+                        horario_actual = datetime.now()
+                        Pac.HorarioTriage = horario_actual
+                        
                 elif sintoma in ["Otalgias", "Odontalgias", "Dolores Inespecíficos Leves", "Traumatismos", "Esguinces"] and Pac.ColorP.Color!= "Amarillo":
                     Pac.ColorP = Colores("Verde")  
-                    horario_actual = datetime.now()
-                    Pac.HorarioTriage = horario_actual
+                    if(Pac.Envejecido == False):
+                        horario_actual = datetime.now()
+                        Pac.HorarioTriage = horario_actual
+                        
                 elif (Pac.ColorP.Color == "Blanco"):
                     Pac.ColorP = Colores("Azul") 
-                    horario_actual = datetime.now()
-                    Pac.HorarioTriage = horario_actual 
-        
+                    if(Pac.Envejecido == False):
+                        horario_actual = datetime.now()
+                        Pac.HorarioTriage = horario_actual
+            
         time.sleep(0.1) #simulamos que tarda en atender a los pacientes
    
     

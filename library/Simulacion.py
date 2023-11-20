@@ -5,6 +5,7 @@ import random
 from typing import List
 from library.DC import CalculoTiempoRestante
 from datetime import datetime
+from library.RandomSintomas import EnvejecerPacientes
 
 
 def Simulacion(arr:list[Paciente], CantidadPacientes, ListaSimulacion: list[Paciente]):        
@@ -76,6 +77,10 @@ def Simulacion(arr:list[Paciente], CantidadPacientes, ListaSimulacion: list[Paci
             print("Triage x Enf5 a: " + str(arr[i].Nombre) + " DNI: " +str(arr[i].DNI))
             print("Color: "+arr[i].ColorP.Color)
             i = i+1   
+
+    #envejecimiento pacientes
+    print("envejecimiento")
+    EnvejecerPacientes(ListaSimulacion)
 
     #imprimo lista 
     print("Lista de pacientes: ")
