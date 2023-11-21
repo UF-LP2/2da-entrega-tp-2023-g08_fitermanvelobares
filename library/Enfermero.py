@@ -28,21 +28,18 @@ class Enfermero:
                 
                 elif sintoma in ["Cefalea Brusca", "Paresia", "Hipertension Arterial", "Vertigo Con Afectacion Vegetativa", "Sincope", "Urgencias Psiquiatricas"]:
                     Pac.ColorP = Colores("Amarillo")  
-                    if(Pac.Envejecido == False):
-                        horario_actual = datetime.now()
-                        Pac.HorarioTriage = horario_actual
+                    horario_actual = datetime.now()
+                    Pac.HorarioTriage = horario_actual
                         
                 elif sintoma in ["Otalgias", "Odontalgias", "Dolores Inespecíficos Leves", "Traumatismos", "Esguinces"] and Pac.ColorP.Color!= "Amarillo":
                     Pac.ColorP = Colores("Verde")  
-                    if(Pac.Envejecido == False):
-                        horario_actual = datetime.now()
-                        Pac.HorarioTriage = horario_actual
+                    horario_actual = datetime.now()
+                    Pac.HorarioTriage = horario_actual
                         
                 elif (Pac.ColorP.Color == "Blanco"):
                     Pac.ColorP = Colores("Azul") 
-                    if(Pac.Envejecido == False):
-                        horario_actual = datetime.now()
-                        Pac.HorarioTriage = horario_actual
+                    horario_actual = datetime.now()
+                    Pac.HorarioTriage = horario_actual
             
         time.sleep(0.1) #simulamos que tarda en atender a los pacientes
    
@@ -53,7 +50,7 @@ class Enfermero:
 
     def Asignar_Lugar_FilaDC(self, Pac: Paciente, NoAtendidos: List[Paciente]) -> None:
         if self.Disponible:
-            if Pac not in NoAtendidos:  # Verificar si el paciente no está en la lista
+            if Pac not in NoAtendidos:  # Verificar si el paciente no está en la lista (puede que ya este y que sea uno de los pacientes que desarrollaron nuevos sintomas)
                 NoAtendidos.append(Pac)  # Insertar Pac en la fila
             if Pac.ColorP.Color != "Azul":
                 Binary_InsertionSort(NoAtendidos)  # Ordenar la fila si Pac no es azul

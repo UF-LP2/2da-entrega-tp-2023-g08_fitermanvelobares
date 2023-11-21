@@ -27,8 +27,7 @@ def EnvejecerPacientes(ListaPacientes:List[Paciente]):
         else: #es azul
             AuxNuevoSintoma = random.randint(0, len(SintomasPosibles)-1) #decido que sintoma nuevo tiene
             
-        ListaPacientes[PosRandLista].Sintomas.clear #elimino los sintomas viejos del paciente
-        ListaPacientes[PosRandLista].Sintomas[0] = SintomasPosibles[AuxNuevoSintoma] #le asigno el nuevo sintoma
+        ListaPacientes[PosRandLista].Sintomas.insert(0,SintomasPosibles[AuxNuevoSintoma]) #le asigno el nuevo sintoma
         ListaPacientes[PosRandLista].Envejecido = True #lo marco como envejecido, asi mantiene el horario de triage anterior
         enfermeroAux.Asignar_Color_Paciente(ListaPacientes[PosRandLista]) #le vuelvo a asignar el color y tiempo de espera maximo
         
